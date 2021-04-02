@@ -47,7 +47,7 @@ module "backend" {
   backend_name  = "backend-${random_string.random.id}"
   instance_type = var.backend_instance_type
 
-  backend_subnets = data.terraform_remote_state.vpc.outputs.backend_subnets
+  backend_subnets = data.terraform_remote_state.vpc.outputs.public_subnets
   security_group  = data.terraform_remote_state.vpc.outputs.backend_security_group_id
 
   tags = var.common_tags
